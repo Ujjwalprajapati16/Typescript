@@ -1,56 +1,46 @@
+"use strict";
 // Basic Types
 // - Primitive Types (number, string, boolean)
 // - Arrays
 // - Tuples
 // - Enums
 // - Any, Unknown, Void, Null, Undefined, Never
-
 // primitive and reference
 // reference - () {} []
-
 // var , let , const
-
 // primitive
-let ab : number = 12;
-let str : string = "hello";
-let bool : boolean = true;
-
+let ab = 12;
+let str = "hello";
+let bool = true;
 //array
 let arr = [1, 2, 3, 5, 6];
-
 //tuples
-let tup : [number, string] = [12, "hello"];
-
+let tup = [12, "hello"];
 //enummeration
-enum Color {
-    Red = 1,
-    Green = 2,
-    Blue = 3,
-}
-let c : Color = Color.Red;
-
+var Color;
+(function (Color) {
+    Color[Color["Red"] = 1] = "Red";
+    Color[Color["Green"] = 2] = "Green";
+    Color[Color["Blue"] = 3] = "Blue";
+})(Color || (Color = {}));
+let c = Color.Red;
 //any
-let randomValue : any = 10;
+let randomValue = 10;
 randomValue = "hello";
 randomValue = true;
-
 //unknown
-let myVariable : unknown = 10;
+let myVariable = 10;
 myVariable = "hello";
 myVariable = true;
-
 //void
-function printMessage(msg : string) : void {
+function printMessage(msg) {
     console.log(msg);
 }
-
 //null
-let n : null = null;
-
+let n = null;
 //undefined
-let u : undefined = undefined;
-
+let u = undefined;
 //never
-function error(message : string) : never {
+function error(message) {
     throw new Error(message);
 }
